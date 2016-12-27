@@ -1,13 +1,14 @@
 {
-  "name": "scott-ui",
+  "name": "focus-ui",
   "theme": "ui",
-  "version": "0.0.0",
-  "description": "A short description of your UI theme",
+  "version": "1.0.0",
+  "description": "An Atom UI theme to focus",
   "keywords": [
     "ui",
-    "theme"
+    "theme",
+    "focus"
   ],
-  "repository": "https://github.com/atom-community/ui-theme-template",
+  "repository": "https://github.com/scottcorgan/focus-ui",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
