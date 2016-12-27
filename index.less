@@ -1,0 +1,89 @@
+// UI Theme
+// -------------------
+
+// This is the main file that imports all the Less files from the `/styles` directory.
+
+// For more infos about creating themes, check out:
+// http://flight-manual.atom.io/hacking-atom/sections/creating-a-theme
+
+@import "styles/ui-variables";
+
+@import "styles/base";
+@import "styles/buttons";
+@import "styles/editor";
+@import "styles/find-and-replace";
+@import "styles/git";
+@import "styles/key-binding";
+@import "styles/lists";
+@import "styles/panels";
+@import "styles/progress";
+@import "styles/sites";
+@import "styles/status-bar";
+@import "styles/tabs";
+@import "styles/text";
+@import "styles/tooltips";
+@import "styles/tree-view";
+
+
+#atom-no-title-bar() {
+    @title-bar-buttons-width: 80px; // seems to work well for many themes
+
+    .title-bar {
+        display: none;
+    }
+
+    .title-bar,
+    .tool-bar,
+    .tool-bar button.tool-bar-btn {
+        // border-width: 0;
+    }
+
+    atom-workspace atom-workspace-axis.horizontal {
+        // margin-top: -23px;
+        // background-color: @tab-bar-background-color;
+    }
+
+    atom-panel-container {
+        &.left {
+            // margin-top: @tab-height;
+        }
+
+        &.right {
+            // margin-top: @tab-height;
+        }
+    }
+
+    // atom-workspace atom-panel-container.left:empty + atom-workspace-axis.vertical .tab-bar {
+    .pane:first-child .tab-bar {
+        padding-left: @title-bar-buttons-width;
+    }
+}
+
+.platform-darwin {
+    #atom-no-title-bar;
+}
+
+// Highlight line
+.atom-text-editor .line[class*="highlight-line-multi-line-solid-bottom"],
+:host .line[class*="highlight-line-multi-line-solid-bottom"],
+atom-text-editor .line[class*="highlight-line-multi-line-solid-bottom"],
+atom-text-editor::shadow .line[class*="highlight-line-multi-line-solid-bottom"] {
+    background-color: rgba(255,255,255,0.05);
+    border-bottom-color: rgba(255,255,255,0.3);
+}
+
+
+//
+
+.modal.overlay.from-top {
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 20px;
+    box-shadow: 0 2px 40px 1px rgba(0, 0, 0, 0.5);
+}
+
+// Gutter
+
+atom-text-editor::shadow .gutter {
+    background-color: @app-background-color;
+}

@@ -1,0 +1,131 @@
+
+// Tabs
+// -------------------
+
+// Displays selectable tabs above the editor.
+// Overrides: atom/tabs
+
+.tab-bar {
+  background-color: @tab-bar-background-color;
+  border-bottom: 1px solid @base-border-color;
+
+  .tab {
+    color: @text-color;
+    height: @tab-height;
+    line-height: @tab-height;
+    font-size: @font-size;
+    border-right: 1px solid @tab-border-color;
+    background-color: @tab-background-color;
+
+    &.active {
+      color: @text-color-selected;
+      background-color: @tab-background-color-active;
+
+      .title::before{
+          font-size: 12px
+      }
+    }
+
+
+
+    // Modified Icon (the blue circle) -------------------
+    &.modified:not(:hover) .close-icon {
+      top: 50%;
+      right: @component-padding + 4px; // 4px -> half of icon size
+      margin-top: -3px;
+      border-color: @text-color-info;
+    }
+    &.modified:hover .close-icon {
+      color: currentColor;
+    }
+
+    .close-icon {
+        opacity: 0;
+        transform: translateY(-1px);
+    }
+    &:hover .close-icon {
+        opacity: 0.5;
+    }
+    &:hover .close-icon:hover {
+        opacity: 1;
+    }
+
+
+
+    // Close Icon (the X) -------------------
+    .close-icon:hover {
+      color: @text-color-selected;
+    }
+    &.active .close-icon:hover {
+      color: @text-color;
+    }
+
+
+    // Dragging -------------------
+    // Styles get applied while dragging a tab
+    &.is-dragging {
+      background: darken(@tab-background-color, 10%);
+      border-color: transparent;
+      opacity: .5;
+      & .close-icon {
+        visibility: hidden;
+      }
+    }
+  }
+}
+
+
+.pane {
+    opacity: 0.5;
+
+    &.active {
+        opacity: 1;
+    }
+}
+
+
+
+.pane .tab-bar .tab {
+    background-color: @base-background-color;
+    border-top: 1px solid @base-background-color;
+    color: @text-color-subtle;
+
+    &:hover {
+        color: @text-color-highlight;
+
+        &.modified::after {
+
+            display: none;
+        }
+    }
+
+    &.modified::after {
+        content: '';
+        width: 5px;
+        height: 5px;
+        position:absolute;
+        right: 16px;
+        top: calc(50%);
+        margin-top: -2px;
+        border-radius: 50%;
+        background-color: #fff;
+    }
+}
+.pane.active {
+    .tab-bar {
+        .tab {
+            &.active {
+                border-top-color: @text-color-highlight;
+                color: @text-color-highlight;
+
+                &:hover {
+                    border-top-color: @text-color-highlight;
+                }
+
+                &.modified  {
+
+                }
+            }
+        }
+    }
+}
