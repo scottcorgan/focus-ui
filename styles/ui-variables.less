@@ -1,3 +1,5 @@
+@import "syntax-variables";
+
 
 // UI Variables
 // -------------------
@@ -12,10 +14,10 @@
 
 
 // Text Colors
-@text-color:           rgb(220,220,220);
-@text-color-subtle:    rgba(220,220,220,0.2);
-@text-color-highlight: hsl(0,0%,94%);
-@text-color-selected:  hsl(0,0%,100%);
+@text-color:           @syntax-text-color;
+@text-color-subtle:    fade(@syntax-text-color, 20%);
+@text-color-highlight: @text-color;
+@text-color-selected:  @text-color;
 
 @text-color-info:    hsl(219,  79%, 66%);
 @text-color-success: hsl(140,  44%, 62%);
@@ -28,13 +30,13 @@
 @background-color-warning: hsl(32,   60%, 50%);
 @background-color-error:   hsl(0,    70%, 50%);
 
-@background-color-highlight: lighten(@base-background-color, 5%);
-@background-color-selected:  lighten(@base-background-color, 4%);
-@app-background-color:       #282828;
+@background-color-highlight: @background-color-selected;
+@background-color-selected:  fade(@text-color, 6%);
+@app-background-color:       @syntax-background-color;
 
 // Base colors
-@base-background-color: #282828;
-@base-border-color:     #282828;
+@base-background-color: @syntax-background-color;
+@base-border-color:     @syntax-background-color;
 
 // Component colors
 @pane-item-background-color: @base-background-color;
@@ -52,7 +54,7 @@
 @panel-heading-background-color: lighten(@base-background-color, 4%);
 @panel-heading-border-color:     @base-border-color;
 
-@overlay-background-color: rgba(40,40,40,0.98);
+@overlay-background-color: fade(@syntax-background-color, 98%);
 @overlay-border-color:     rgba(0,0,0,0);
 
 @button-background-color:          lighten(@base-background-color, 10%);

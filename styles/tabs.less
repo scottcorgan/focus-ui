@@ -1,4 +1,3 @@
-
 // Tabs
 // -------------------
 
@@ -13,19 +12,19 @@
     color: @text-color;
     height: @tab-height;
     line-height: @tab-height;
-    font-size: @font-size;
-    border-right: 1px solid @tab-border-color;
+    font-size: @font-size - 1;
+    font-weight: 700;
     background-color: @tab-background-color;
+    text-transform: uppercase;
+
+    .title::before{
+        font-size: 12px
+    }
 
     &.active {
       color: @text-color-selected;
       background-color: @tab-background-color-active;
-
-      .title::before{
-          font-size: 12px
-      }
     }
-
 
 
     // Modified Icon (the blue circle) -------------------
@@ -50,8 +49,6 @@
         opacity: 1;
     }
 
-
-
     // Close Icon (the X) -------------------
     .close-icon:hover {
       color: @text-color-selected;
@@ -67,6 +64,7 @@
       background: darken(@tab-background-color, 10%);
       border-color: transparent;
       opacity: .5;
+
       & .close-icon {
         visibility: hidden;
       }
@@ -75,26 +73,15 @@
 }
 
 
-.pane {
-    opacity: 0.5;
-
-    &.active {
-        opacity: 1;
-    }
-}
-
-
-
 .pane .tab-bar .tab {
     background-color: @base-background-color;
     border-top: 1px solid @base-background-color;
     color: @text-color-subtle;
 
     &:hover {
-        color: @text-color-highlight;
+        color: @text-color;
 
         &.modified::after {
-
             display: none;
         }
     }
@@ -108,22 +95,18 @@
         top: calc(50%);
         margin-top: -2px;
         border-radius: 50%;
-        background-color: #fff;
+        background-color: @text-color;
     }
 }
 .pane.active {
     .tab-bar {
         .tab {
             &.active {
-                border-top-color: @text-color-highlight;
-                color: @text-color-highlight;
+                border-top-color: @text-color;
+                color: @text-color;
 
                 &:hover {
-                    border-top-color: @text-color-highlight;
-                }
-
-                &.modified  {
-
+                    border-top-color: @text-color;
                 }
             }
         }

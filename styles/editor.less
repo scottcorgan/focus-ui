@@ -15,20 +15,16 @@ atom-text-editor[mini] {
   height: 36px;
 
   &.is-focused {
-    border-bottom: 1px solid lighten(@base-background-color, 20%);
+    border-bottom: 1px solid @text-color-subtle;
   }
 
   &, // <-- Deprecated. The `&,` can be removed once the Shadow DOM can't be turned off in the settings.
   &::shadow {
     .placeholder-text {
-      color: @text-color-subtle;
+        color: @text-color-subtle;
     }
     .selection .region {
-      background-color: @background-color-selected;
+        background-color: @background-color-selected;
     }
   }
-}
-
-atom-text-editor {
-    padding: 10px 0;
 }

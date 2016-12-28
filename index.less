@@ -7,6 +7,7 @@
 // http://flight-manual.atom.io/hacking-atom/sections/creating-a-theme
 
 @import "styles/ui-variables";
+@import "syntax-variables";
 
 @import "styles/base";
 @import "styles/buttons";
@@ -32,28 +33,6 @@
         display: none;
     }
 
-    .title-bar,
-    .tool-bar,
-    .tool-bar button.tool-bar-btn {
-        // border-width: 0;
-    }
-
-    atom-workspace atom-workspace-axis.horizontal {
-        // margin-top: -23px;
-        // background-color: @tab-bar-background-color;
-    }
-
-    atom-panel-container {
-        &.left {
-            // margin-top: @tab-height;
-        }
-
-        &.right {
-            // margin-top: @tab-height;
-        }
-    }
-
-    // atom-workspace atom-panel-container.left:empty + atom-workspace-axis.vertical .tab-bar {
     .pane:first-child .tab-bar {
         padding-left: @title-bar-buttons-width;
     }
@@ -68,8 +47,8 @@
 :host .line[class*="highlight-line-multi-line-solid-bottom"],
 atom-text-editor .line[class*="highlight-line-multi-line-solid-bottom"],
 atom-text-editor::shadow .line[class*="highlight-line-multi-line-solid-bottom"] {
-    background-color: rgba(255,255,255,0.05);
-    border-bottom-color: rgba(255,255,255,0.3);
+    background-color: fade(@text-color, 5%);
+    border-bottom-color: fade(@text-color, 20%);
 }
 
 
@@ -86,4 +65,15 @@ atom-text-editor::shadow .line[class*="highlight-line-multi-line-solid-bottom"] 
 
 atom-text-editor::shadow .gutter {
     background-color: @app-background-color;
+    color: fade(@syntax-gutter-text-color, 20);
+}
+
+//
+
+.pane {
+    opacity: 0.5;
+
+    &.active {
+        opacity: 1;
+    }
 }
