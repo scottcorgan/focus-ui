@@ -26,22 +26,6 @@
 @import "styles/tree-view";
 
 
-#atom-no-title-bar() {
-    @title-bar-buttons-width: 80px; // seems to work well for many themes
-
-    .title-bar {
-        display: none;
-    }
-
-    .pane:first-child .tab-bar {
-        padding-left: @title-bar-buttons-width;
-    }
-}
-
-.platform-darwin {
-    #atom-no-title-bar;
-}
-
 // Highlight line
 .atom-text-editor .line[class*="highlight-line-multi-line-solid-bottom"],
 :host .line[class*="highlight-line-multi-line-solid-bottom"],

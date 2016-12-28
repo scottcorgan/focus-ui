@@ -32,11 +32,44 @@ atom-panel {
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: fade(@tool-panel-background-color, 92%);
+        background-color: fade(@tool-panel-background-color, 97%);
+        padding: 0;
 
-        & > .select-list {
-            min-width: 600px;
+        & .select-list {
+            width: 600px;
+
+            .list-group {
+
+                & > li {
+                    padding: 20px;
+                }
+            }
+
+            .two-lines {
+                .icon {
+                    margin-left: -22px;
+                }
+            }
+
+            .primary-line {
+                color: fade(@text-color, 70%);
+                font-size: @font-size + 1;
+                font-weight: 600;
+                padding: 0 40px;
+
+            }
+
+            .secondary-line {
+                color: fade(@text-color, 30%);
+                font-size: @font-size - 1;
+                line-height: 12px;
+                padding: 0 40px;
+            }
         }
+    }
+
+    atom-text-editor[mini] {
+        min-width: 600px
     }
 
 }
