@@ -11,7 +11,7 @@
 }
 
 .tree-view {
-  color: @text-color;
+  color: fade(@text-color, 40%);
   background-color: @tree-view-background-color;
   opacity: 0.5;
   padding: 30px;
@@ -20,7 +20,17 @@
       opacity: 1;
   }
 
-  .list-item.selected {
-    color: @text-color-selected;
-  }
+
+    .list-item:hover {
+        color: fade(@text-color, 90%);
+    }
+
+    .list-item.selected {
+        color: fade(@text-color, 90%);
+    }
+
+    .list-item.header {
+        color: fade(@text-color, 70%);
+        font-weight: 700;
+    }
 }
