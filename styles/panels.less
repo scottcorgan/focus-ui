@@ -41,6 +41,7 @@ atom-panel {
             .list-group {
 
                 & > li {
+                    font-size: @font-size + 1;
                     padding: 20px;
                 }
             }
@@ -76,4 +77,53 @@ atom-panel {
 
 .pane {
     border-left: 1px solid fade(@text-color, 5%);
+}
+
+.preview-pane {
+    .highlight-info, .match {
+        background-color: @app-background-color;
+        border:1px solid @text-color-subtle;
+        margin: 3px;
+    }
+
+    .results-view {
+        padding: 0;
+
+        .path {
+            padding: 0 20px;
+            border-top: 1px solid fade(@text-color, 5%);
+
+            &:first-child {
+                border-top: 0;
+            }
+
+            &::before{
+                display: none;
+            }
+
+            .path-details {
+                font-size: @font-size + 1;
+                font-weight: 600;
+                padding: 10px 0;
+            }
+
+            .matches {
+                padding-bottom: 20px;
+
+                .search-result {
+                    font-weight: 500;
+                    color: fade(@text-color, 50%);
+                    line-height: 1.5;
+
+                    &:hover {
+                        color: @text-color;
+                    }
+
+                    &::before{
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
 }

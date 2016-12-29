@@ -6,7 +6,10 @@
   "keywords": [
     "ui",
     "theme",
-    "focus"
+    "focus",
+    "simple",
+    "clean",
+    "opacity"
   ],
   "repository": "https://github.com/scottcorgan/focus-ui",
   "license": "MIT",
