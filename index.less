@@ -41,6 +41,11 @@ atom-text-editor::shadow .line[class*="highlight-line-multi-line-solid-bottom"] 
 atom-text-editor::shadow .gutter {
     background-color: @app-background-color;
     color: fade(@syntax-gutter-text-color, 20);
+
+    .cursor-line {
+        background-color: fade(@text-color, 5%);
+        box-shadow: 0 1px 0 fade(@text-color, 20%);
+    }
 }
 
 //
