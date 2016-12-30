@@ -57,3 +57,21 @@ atom-text-editor::shadow .gutter {
         opacity: 1;
     }
 }
+
+.scrollbars-visible-always {
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track,
+  ::-webkit-scrollbar-corner {
+    background: @scrollbar-background-color;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: @scrollbar-color;
+    border-radius: 5px;
+    box-shadow: 0 0 1px black inset;
+  }
+}
