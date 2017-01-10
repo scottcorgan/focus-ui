@@ -45,6 +45,7 @@
     .close-icon {
         opacity: 0;
         transform: translateY(-1px);
+        transition: opacity 90ms linear;
     }
     &:hover .close-icon {
         opacity: 0.3;
@@ -81,6 +82,7 @@
     background-color: @base-background-color;
     border-top: 1px solid @base-background-color;
     color: @text-color-subtle;
+    transition: color 90ms linear;
 
     &:hover {
         color: @text-color;

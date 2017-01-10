@@ -52,8 +52,10 @@ atom-text-editor::shadow .gutter {
 
 .pane {
     opacity: 0.3;
+    transition: opacity 90ms linear;
 
-    &.active {
+    &.active,
+    &:hover {
         opacity: 1;
     }
 }
